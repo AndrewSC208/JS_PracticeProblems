@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Factorial</title>
+</head>
+<body>
+	<!-- 
+	Return the factorial of the provided integer.
+
+	If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.
+
+	Factorials are often represented with the shorthand notation n!
+
+	For example: 5! = 1 * 2 * 3 * 4 * 5 = 120
+
+	Remember to use Read-Search-Ask if you get stuck. Write your own code.
+
+	Here are some helpful links:
+
+	Arithmetic Operators
+	 -->
+
+	<p>Enter a number that you would like to get the factorial of:</p>
+	<input type="number" id="n">
+	<button id="factorial" onclick="main()">Factor</button>
+	<br>
+
+	<div id="output"></div>
+
+	<script>
+	function main() {
+		var num = document.getElementById("n").value;
+		
+		function factorialize(num) {
+			var x = 1;
+			for(var i = 1; i < num; i++){
+				x += x * i;
+				
+			}
+		return x;
+		}
+
+		console.log(factorialize(num));
+	}
+	</script>
+</body>
+</html>

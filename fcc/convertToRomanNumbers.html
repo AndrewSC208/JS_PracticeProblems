@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Convert to Roman Numbers</title>
+</head>
+<p>Convert the given number into a roman numeral.</p>
+
+<p>All roman numerals answers should be provided in upper-case.</p>
+
+<p>Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.</p>
+
+<p>Here are some helpful links:</p>
+
+<p>Roman Numerals</p>
+<p>Array.splice()</p>
+<p>Array.indexOf()</p>
+<p>Array.join()</p>
+
+<p>convertToRoman(2) should return "II". </p>
+<p>convertToRoman(3) should return "III". </p>
+<p>convertToRoman(4) should return "IV". </p>
+<p>convertToRoman(5) should return "V". </p>
+<p>convertToRoman(9) should return "IX". </p>
+<p>convertToRoman(12) should return "XII". </p>
+<p>convertToRoman(16) should return "XVI". </p>
+<p>convertToRoman(29) should return "XXIX". </p>
+<p>convertToRoman(44) should return "XLIV". </p>
+<p>convertToRoman(45) should return "XLV" </p>
+<p>convertToRoman(68) should return "LXVIII" </p>
+<p>convertToRoman(83) should return "LXXXIII" </p>
+<p>convertToRoman(97) should return "XCVII" </p>
+<p>convertToRoman(99) should return "XCIX" </p>
+<p>convertToRoman(500) should return "D" </p>
+<p>convertToRoman(501) should return "DI" </p>
+<p>convertToRoman(649) should return "DCXLIX" </p>
+<p>convertToRoman(798) should return "DCCXCVIII" </p>
+<p>convertToRoman(891) should return "DCCCXCI" </p>
+<p>convertToRoman(1000) should return "M" </p>
+<p>convertToRoman(1004) should return "MIV" </p>
+<p>convertToRoman(1006) should return "MVI" </p>
+<p>convertToRoman(1023) should return "MXXIII" </p>
+<p>convertToRoman(2014) should return "MMXIV" </p>
+<p>convertToRoman(3999) should return "MMMCMXCIX" </p>
+
+<body>
+
+
+<script>
+
+	function convertToRoman(num) {
+		var lookup = { M:1000, CM:900, D:500, CD:400, C:100, XC:90, L:50, XL:40, X:10, IX:9, V:5, IV:4, I:1 }, roman = '', i;
+		for (i in lookup ) {
+			while( num >= lookup[i] ) {
+				roman += i;
+				num -= lookup[i];
+			}
+		}
+
+	return roman;		
+	}
+
+</script>	
+</body>
+</html>
+
+

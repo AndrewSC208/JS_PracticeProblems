@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>video API</title>
+</head>
+<body>
+	<!-- tell the webpage were to get the file -->
+	<video controls>
+		<source src="spill.mp4" type="video/mp4">
+		<source src="spill.ogg" type="video/ogg">		
+	</video>
+	
+	<script>
+		var video;
+		// comment out the created buttons to show the video api buttons. 
+		window.addEventListener('load', init, false);
+		//window.addEventListener('click', playPause, false);
+		function playPause() {
+			if(video.paused) {
+				video.play();
+			} else {
+				video.pause();
+			}
+		}
+		function init() {
+			video = document.getElementsByTagName('video') [0];
+			video.play();
+		}
+	</script>
+
+</body>
+</html>

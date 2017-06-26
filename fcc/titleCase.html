@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Find the longest Word</title>
+</head>
+<body>
+<!-- Return the provided string with the first letter of each word capitalized -->
+<p>Enter a sentacne to title case:</p>
+<input type="text" id="word">
+<button onclick="main()">Click me!</button>
+
+<div id="output"></div>
+
+<script>
+function main() {
+	var str = document.getElementById("word").value;
+
+	function titleCase(str) {
+		str = str.toLowerCase();
+
+		str = str.split(' ');
+
+		var x = [],
+			titleArray = [],
+			titleString = "";
+
+		for(var i = 0; i < str.length; i++) {
+			var y = [],
+				first = [];
+
+			// logic:
+			x = str[i].split(' ');
+			first = x[0].split('');
+			first = first[0].toUpperCase();
+			first = first.split();
+			x = x[0].split('');
+			x = x.splice(1, x.length);
+			first = first.concat(x);
+			first = first.join('');
+			titleArray = titleArray.concat(first); 
+		}
+		// typecast:
+		titleString = titleArray.join(' ');
+		return titleString;
+	}
+
+	
+	titleCase(str);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Loops</title>
+</head>
+<body>
+	<h1>JavaScript For Loop</h1>
+	<p>loops can execute a block of code a number of times</p>
+	<h3>JavaScript Loops</h3>
+	<p>Loops are handy, if you want to run the same code over and over again, each time with a different value. Often this is the case when working with arrays</p>
+
+	<script>
+		for(i = 0; i < cars.length; i++) {
+			text += cars[i] + "<br>";
+		}
+	</script>
+
+	<h3>Different Kinds of Loops</h3>
+	<p>JavaScript supports different kinds of loops:</p>
+	<ul>
+		<li>for - loops through a block of code a number of times.</li>
+		<li>for/in - Loops through the properties of an object</li>
+		<li>while - loops through a block of code while a specified condition is true.</li>
+		<li>do/while = also loops through a block of code while a specified conditions is true.</li>
+	</ul>
+
+	<h3>The For Loop</h3>
+	<p>the for loop is often the tool you will use when you want to create a loop.</p>
+	<script>
+		// syntax:
+		//for (statement 1; statement 3; statement 3) {
+			// code block to be executed. 
+		//}
+		// Statement 1: Executes before the loop ( the code block) starts.
+		// statement 2: defines the condition for running the loop (the code block)
+		// statement 3: is executed each time after the loop (the code block) had been executed.
+
+
+	</script>
+
+	<h3>For Loop example</h3>
+	<p>click the button to loop through a block of code five time.</p>
+	<button onclick="myFunction()">Try it</button>
+	<p id="demo"></p>
+	<script>
+		function myFunction() {
+			var text = "";
+			var i;
+			for( i = 0; i < 10; i++) {
+				text += "The number is " + i + "<br>";
+			}
+			document.getElementById("demo").innerHTML = text;
+		}
+
+		// this is a super simple for loop that just displays what you need it.
+	</script>
+
+	<h3>The for/in loop</h3>
+	<p>The javaScript for/in statement loops through the properties of an object:</p>
+	<p>Example</p>
+	<p id="demo2"></p>
+	<script>
+		var person = {fname:"Andrew", lname:"Meiling", age:27};
+		var txt = "";
+		var x;
+		for (x in person) {
+			txt+= person[x] + " ";
+		}
+		document.getElementById("demo2").innerHTML = txt;
+		// This is another simple loop that just loops and prints out elements in the object. 
+	</script>
+
+	<h3>The while loop</h3>
+	<p>The while loop loops through a block of code as long as a specified condition is true.</p>
+	<p>example</p>
+	<button onclick="myFunction2()">Try it</button>
+	<p id="demo3"></p>
+	<script>
+		function myFunction2() {
+			var text = "";
+			var i = 0;
+			while(i < 10) {
+				text += "<br>The number is " + i;
+				i++;
+			}
+			document.getElementById("demo3").innerHTML = text;
+		}
+	</script>
+
+	<h3>The do/while Loop</h3>
+	<p>The do/while loop is a variant of the while loop. This loop will execute the code block once, before checking if the condition is true, then will repeat the loop as long as the condition is true.</p>
+	<p>Example</p>
+	<button onclick="myFunction3">Try It</button>
+	<p id="demo4"></p>
+	<script>
+		function myFunction3() {
+			var text = "";
+			var i = 0;
+			do {
+				text += "<br>The number is " + i;
+			} while ( i < 10)
+			document.getElementById("demo4").innerHTML = text;
+		}
+	</script>
+
+	<h3>Comparing For and While Loops</h3>
+	<p>If you have read the previous chapter, about the for loop, you will discover that a while loop is much the same as a for loop, with state 1 and statement 3 omitted. The loop is this example uses a <strong>for loop</strong> to collect the car names from the cars array:</p>
+	<p id="demo6"></p>
+	<script>
+		cars = ["BMW", "Volvo", "Saab", "Ford"];
+		var i = 0;
+		var text = "";
+		for(;cars[i];) {
+			text += cars[i] + "<br>";
+			i++;
+		}
+		document.getElementById("demo6").innerHTML = text;
+	</script>
+
+	<p>This loop in this example used a <strong>while loop</strong> to collect the car names from the cars array:</p>
+	<p id="demo7"></p>
+	<script>
+		cars = ["BMW", "Volvo", "Saab", "Ford"];
+		var i = 0;
+		var text = "";
+		while (cars[i]) {
+			text += cars[i] + "<br>";
+			i++;
+		}
+		document.getElementById("demo7").innerHTML = text;
+	</script>
+
+	<h2>JavaScript Break and continue</h2>
+	<p>The break statement "jumps out" out a loop</p>
+	<p>The continue statement "jumps over" one iteration in the loop</p>
+	<h3>The break statement</h3>
+	<p>You have already seen the break statement used in an earlier chapter of this tutorial. It was used to "jump out" switch() statement.</p>
+	<p>The break statement can also be used to jump out of a loop</p>
+	<p>The break statement breaks the loop and continues executing the code after the loop</p>
+
+	<h3>The continue statement</h3>
+	<p>The continue statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.</p>
+</body>
+</html>

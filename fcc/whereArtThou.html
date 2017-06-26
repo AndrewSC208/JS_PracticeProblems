@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Where art thou</title>
+</head>
+<body>
+
+<p>Make a function that looks through an array of objects (first argument) and returns an array of all objects that have matching property and value pairs (second argument). Each property and value pair of the source object has to be present in the object from the collection if it is to be included in the returned array.</p>
+
+<p>For example, if the first argument is [{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], and the second argument is { last: "Capulet" }, then you must return the third object from the array (the first argument), because it contains the property and its value, that was passed on as the second argument.</p>
+
+<p>Remember to use Read-Search-Ask if you get stuck. Write your own code.</p>
+
+<p>Here are some helpful links:</p>
+
+<p>Global Object</p>
+<p>Object.hasOwnProperty()</p>
+<p>Object.keys()</p>
+
+<script>
+
+o = new Object();
+o.prop = 'exists';
+o.first = 'Andrew';
+
+var arr = ['first'];
+
+// console.log(o.hasOwnProperty('prop'));
+// console.log(o);
+// console.log(Object.keys(o));
+
+function whereAreYou(collection, source) {
+	// what's in a name?
+	var arr = [],
+			objKeys = Object.keys(source), i = 0, x = 0, z = 0, count = 0;
+
+			// loop through array of objects:
+			for(i in collection) {
+				
+
+				for (x in objKeys ) {
+					if()
+						
+					
+					x++
+				}
+				
+
+
+				i++
+			}
+
+	console.log(arr);
+
+	// only change code below this line
+	// for statment to loop through each object in arrays
+	// check for property
+		// if property exists push to 'arr'
+		// else move to next object in array
+
+	// return final arry['arr'] with all objects that contain property
+
+
+
+	// only change code above this line
+	//return arr;
+}
+
+whereAreYou([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }, { first: "Andrew", last: "Capulet"}], { last: "Capulet", first: "Andrew"});
+	
+</script>
+	
+</body>
+</html>

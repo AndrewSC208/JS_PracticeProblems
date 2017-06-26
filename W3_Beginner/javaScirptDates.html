@@ -1,0 +1,46 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Dates</title>
+</head>
+<body>
+	<h1>JavaScript Dates</h1>
+	<p>The Date object lets you work with dates (years, months, days, minutes, seconds, milliseconds)</p>
+
+	<h3>Displaying Dates</h3>
+	
+	<button onclick="displayDate()">Click me to show the date I was clicked!</button>
+
+	<div id="demo"></div>
+
+	<script>
+
+		// lets make a function to display the date. Its more fun that way. 
+		function displayDate() {
+			document.getElementById("demo").innerHTML = Date();	
+		}
+
+	</script>
+
+	<h3>Createing Date Objects</h3>
+	<p>The Date objects lets u work with dates</p>\
+	<p>A date consists of a year, month, week, day, minute, second, and millisecond</p>
+	<p>Date objects are created with the new Date() constructor</p>
+	<p>there are 4 ways of initiating a date:</p>
+
+	<script>
+
+		new Date();
+		new Date(milliseconds);
+		new Date(dateString);
+		new Date(year, month, day, hours, minutes, seconds, milliseconds);
+		// using the new Date(), without parameters, creates a new date object wit the current date and time. 
+
+		var d = new Date();
+		document.getElementById("date").innerHTML = d;
+
+	</script>
+
+	<div id="date"></div>
+</body>
+</html>

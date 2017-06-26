@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Audio API</title>
+</head>
+<body>
+	<!-- tell the webpage were to get the file -->
+	<audio controls>
+		<source src="maid.mp3" type="audio/mpeg">
+		<source src="maid.ogg" type="audio/igg">		
+	</audio>
+	
+	<script>
+		var audio;
+		// comment out the created buttons to show the audio api buttons. 
+		//window.addEventListener('load', init, false);
+		//window.addEventListener('click', playPause, false);
+		function playPause() {
+			if(audio.paused) {
+				audio.play();
+			} else {
+				audio.pause();
+			}
+		}
+		function init() {
+			audio = document.getElementsByTagName('audio') [0];
+			audio.play();
+		}
+	</script>
+
+</body>
+</html>

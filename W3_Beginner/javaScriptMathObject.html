@@ -1,0 +1,87 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Math Object</title>
+	<link rel="stylesheet" href="#">
+</head>
+<body>
+	<h1>JavaScirpt Math Object</h1>
+	<p>The math object allows you to perform mathematical tasks on numbers</p>
+	<h3>The Math Object</h3>
+	<p>The Math object allows you to perform mathematical tasks</p>
+	<p>The math object includes several mathematical methods</p>
+
+	<h3>Math.min() and Math.max()</h3>
+	<p>what do you think that this does?</p>
+
+	<script>
+		// Math.min() example
+		var minNum = Math.min(456, 6515, 45, -5, -25);
+		console.log(minNum);
+
+		// Math.max() example:
+		var maxNum = Math.max(56,45645,456, 789, 99999994);
+		console.log(maxNum);
+
+	</script>
+
+	<h3>Math.random()</h3>
+	<p>Returns a random number</p>
+	<script>
+		//Math.random() example:
+		var randomNum = Math.random();
+		console.log(randomNum);
+	</script>
+
+	<h3>Math.round()</h3>
+	<p>rounds a number to the nearest int:</p>
+	<script>
+		// Math.round()
+		var roundedNum = Math.round(4.7);
+		console.log(roundedNum); // this will return 5.
+	</script>
+
+	<h3>Math.ceil()</h3>
+	<p>rounds a number <strong>up</strong> to the nearest int</p>
+	<script>
+		// Math.ceil()
+		var ceilNum = Math.ceil(5.2);
+		console.log(ceilNum);
+	</script>
+
+	<h3>Math.floor</h3>
+	<p>round a number <strong>down</strong> to the nearest int</p>
+	<script>
+		// Math.floor()
+		var floorNum = Math.floor(9.9);
+		console.log(floorNum);
+
+		// Math.floor() with random numbers
+		var randInt = Math.floor(Math.random() * 11);
+		console.log("This is a random number between 0 and 10: " + randInt);
+	</script>
+
+	<h3>Math Constants</h3>
+	<p>JavaScript provides 8 mathematical constants that can be accessed with the Math object</p>
+	<script>
+		// At some point I am going to need to dig into this way more.
+
+		Math.E; 		// returns Euler's number
+		Math.PI; 		// returns PI
+		Math.SQRT2; 	// returns the square root of 2
+		Math.SQRT1_2; 	// returns the square root of 1/2
+		Math.LN2; 		// returns the natural logarithm of 2
+		Math.LN10; 		// returns the natural logarithm of 10
+		Math.LOG2E;		// returns the base logarithm of E
+		Math.LOG10E;	// returns the base 10 logarithm of E
+
+	</script>
+	
+	<h3>Math Object Methods</h3>
+
+	<!-- refer to the link -->
+	<!-- http://www.w3schools.com/js/js_math.asp -->
+
+
+</body>
+</html>

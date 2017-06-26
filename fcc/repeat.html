@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Return the largest!</title>
+</head>
+<body>
+<!-- Return the largest array! -->
+<style>
+	.box {
+		border: 1px solid black;
+		width: 100px;
+		height: 100px;
+		text-align: center;
+	}
+
+	#jqFun {
+		height: 500px;
+	}
+</style>
+<script src="jq.js"></script>
+
+<p>Follow direction's:</p>
+
+
+
+<p>String:</p>
+<input type="text" id="str" value="">
+<p>Number:</p>
+<input type="number" id="num">
+<button onclick="main()">Click me!</button>
+
+<div id="output1"></div>
+<div id="output2"></div>
+<div id="output3"></div>
+
+<br>
+<hr>
+<br>
+<div id="jqFun">
+	<h3>jq Fun!</h3>
+	<button id="trigger">Click Me!</button><br><br>
+	<div class="box" id="box1">Box 1 </div>
+	<br>
+	<div class="box" id="box2">Box 2</div>
+</div>
+
+<script>
+// a little bit of jq practice:
+// I need to mess around with animating and selecting differenet eleaments:
+var height = 25;
+$(function() {
+	$("#trigger").click(function() {
+		$(".box").animate({
+			opacity: 0.25,
+			marginLeft: "25px",
+			height: height,
+			width: "50%"
+		}, 1000, function() {
+			// this is the call back!
+			
+		});
+	});
+});
+// glabal vars:
+
+
+// main runs when button is clicked:
+function main() {
+	// set vars:
+	var x = document.getElementById("str").value;
+	var y = document.getElementById("num").value;
+
+	// run one of the functions: 
+	where([2, 5, 10], 15);
+
+}
+
+function where(arr, num) {
+	var sorted = arr;
+
+	// this is a good way actually sort numbers correctly:
+	sorted.sort(function(a, b) {
+		return a - b;
+	});
+
+	console.log(sorted);
+
+	if(num <= sorted[0]) {
+		console.log(0);
+		return 0;
+	} else if (num >= sorted[sorted.length-1]) {
+		console.log(sorted.length);
+		return sorted.length;
+	} else {
+
+		for(var i = 0; i < sorted.length; i++) {
+
+			if(num >= sorted[i] && num <= sorted[i+1]) {
+				console.log(i+1);
+				return i+1;
+			}
+		}
+	}
+}
+
+function destoryer(arr) {
+	var filteredArr = arr,
+	    args        = [];
+	
+	for(var i = 1; i < arguments.length; i++) {
+		args.push(arguments[i]);
+	}
+
+	for(var i = 0; i < args.length; i++) {
+		filteredArr = filteredArr.filter(x);
+	}
+
+	function x(value) {
+		return value != args[i];
+	}
+
+	return filteredArr;
+}
+
+function bouncer(arr) {
+	// remove all falsy items out of the array:
+	var filtered = [];
+	function isTrue(value) {
+		
+		var x = Boolean(value);
+
+		if(x === false) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	filtered = arr.filter(isTrue);
+	return filtered;
+}
+
+function mutation(arr) {
+	var original = arr[0].toLowerCase(),
+		check    = arr[1].toLowerCase(),
+		x        = true;
+
+	for(var i = 0; i < check.length; i++) {
+
+		x = original.indexOf(check[i]);
+		
+		if(x == -1) {
+			x = false;
+			//console.log(false);
+			return false;
+		}
+	}
+
+	if(x === false) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function chunk(arr, size) {
+	var finalMultiArr = [];
+	for(var i = 0; i < arr.length; i+=size) {
+		finalMultiArr.push(arr.slice(i, i+size));
+	}
+	return finalMultiArr;
+	//document.getElementById("output3").innerHTML = finalMultiArr;
+}
+
+// create the function:
+ function repeat(str, num) {
+ 	var finalString = "";
+
+ 	for(var i = 0; i < num; i++) {
+ 		finalString += str;
+ 	}
+ 	
+ 	return finalString;
+ 	//document.getElementById("output3").innerHTML = finalString;
+}
+
+function truncate(str, num) {
+
+	if(str.length > num) {
+		if(num > 3) {
+			str = str.slice(0, num-3);
+			str = str + "...";
+			console.log(str);	
+		} else {
+			str = str.slice(0, num);
+			str = str + "...";
+			console.log(str);	
+		}
+		
+	}
+
+	// display value on the page:
+	document.getElementById('output3').innerHTML = str;	
+	return str;
+}
+</script>
+
+</body>
+</html>

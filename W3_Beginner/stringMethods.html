@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>String Methods</title>
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	
+</head>
+<body>
+	<div class="container">
+	<br>
+	
+	First name:  <br><input type="text" id="f_name">	<br><br>
+	Middle name: <br><input type="text" id="m_name"> <br><br>
+	Last Name:   <br><input type="text" id="l_name"> <br><br>
+
+	<button onclick="charAtFunc()">click to try .charAt()</button><br><br>
+	<button onclick="subStringFunc()">click to try .subString()</button><br/><br/>
+	<button onclick="subStrFunc()">click to try .substr()</button>
+	<br><br>
+	<h3>Full String</h3>
+	<p id=""></p>
+	<h3>After function</h3>
+	<p id="display"></p>
+
+	</div>
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<!-- bootstrap -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script>
+	// String methods:
+
+		function returnNames() {
+			var f_name = document.getElementById("f_name").value;
+			return f_name;	
+			var m_name = document.getElementById("m_name").value;
+			return m_name;
+			var l_name = document.getElementById("l_name").value;
+			return l_name;
+		}
+		
+		function charAtFunc() {
+			var f_name = document.getElementById("f_name").value;	
+			var m_name = document.getElementById("m_name").value;
+			var l_name = document.getElementById("l_name").value;
+			var middle_initial = m_name.charAt(0);
+			document.getElementById("display").innerHTML = middle_initial;
+		}
+
+		function subStringFunc() {
+			var f_name = document.getElementById("f_name").value;
+			var m_name = document.getElementById("m_name").value;
+			var l_name = document.getElementById("l_name").value;
+			var big_name = f_name.concat(m_name, l_name);	
+			big_name = big_name.substring(1,3);
+			// sub string function
+			document.getElementById("display").innerHTML = big_name;
+		}
+
+		function subStrFunc() {
+			var f_name = document.getElementById("f_name").value;
+			var m_name = document.getElementById("m_name").value;
+			var l_name = document.getElementById("l_name").value;
+			var big_name = f_name.concat(m_name, l_name);	
+			big_name = big_name.substr(1,3);
+			// sub string function
+			document.getElementById("display").innerHTML = big_name;
+		}
+
+
+	</script>
+</body>
+</html>
+
+

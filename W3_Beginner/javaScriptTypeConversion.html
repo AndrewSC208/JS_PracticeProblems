@@ -1,0 +1,169 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Type conversion</title>
+</head>
+<body>
+	<h1>JavaScript Data Types Conversion</h1>
+	<p>Number() converts to a number, String() converts to a String, Boolean() converts to a Boolean.</p>
+
+	<h3>JavaScript Data Types</h3>
+	<p>JavaScript there are 5 different data types that can contain values:</p>
+	<ul>
+		<li>string</li>
+		<li>number</li>
+		<li>boolean</li>
+		<li>object</li>
+		<li>function</li>
+	</ul>
+
+	<p>There are 3 types of objects:</p>
+	<ul>
+		<li>Object</li>
+		<li>Date</li>
+		<li>Array</li>
+	</ul>
+	<p>And 2 data types that cannot contain values:</p>
+	<ul>
+		<li>null</li>
+		<li>undefined</li>
+	</ul>
+
+	<h3>the typeof Operator</h3>
+	<p>You can use the typeof operator to find the data type of a JavaScript variable</p>
+	<script>
+		typeof "John" // returns string
+		typeof 3.14   // returns number
+		typeof NaN    // returns number
+		typeof false  // returns boolean
+
+		// you get the point. 
+
+		// NOTE: You cannot use typeof to define if an object is an JavaScript Array or a JavaScript Date.
+	</script>
+
+	<h3>The constructor Property</h3>
+	<p>The constructor property returns the constructor function for all JavaScript variables.</p>
+
+	<script>
+		"John".constructor	// Returns function String() { [native code] }
+		(3.14).constructor	// Returns function Number() { [native] }
+		false.constructor   // Returns function boolean(){ [native code] }
+
+		// you get the idea.
+
+		// You can check the constructor property to find out if an object is an array. (Contains the word "Array"):
+
+		function isArray(myArray) {
+			return myArray.constructor.toString().indexof("Array") > -1;
+		}
+
+		// You can check the constructor property to find out if an object is a Date (Contains the word "Date"):
+
+		function isDate(myDate) {
+			retrun myDate.constructor.toString().indexof("Date") > -1;
+		}
+
+	</script>
+
+	<h3>JavaScript Type Conversion</h3>
+	<p>JavaScirpt variables can be converted to a new variable and another data type:</p>
+	<ul>
+		<li>By the use of a JavaScirpt function</li>
+		<li>Automatically by JavaScript itself</li>
+	</ul>
+
+	<hr>
+
+	<h3>Converting Numbers to Strings</h3>
+	<p>The global method String() can convert numbers to strings. It can be used on any type of numbers, like literals, variables, or expressions:</p>
+	<script>
+		String(x)   // returns a string from a number variable x
+		String(123) // returns a string from a number literal 123
+		String(100 + 23) // returns a string from a number from an expression. 
+	</script>
+
+	<h3>the number methods toString() does the same</h3>
+	<script>
+		x.toString();
+		(123).toString();
+		(100 + 23).toString();
+	</script>
+
+	<p>In the chapter Number Methods, you will find more methods that can be used to convert numbers to strings:</p>
+
+	<script>
+		// method 				Description
+		toExponential() 		// Returns a string, with a number rounded and written using exponential notation. 
+		toFixed() 				// returns a string, with a number rounded and written with a specified number of decimals. 
+		toPrecision() 			// returns a string, with a number written with a specified length.
+	</script>
+
+	<h3>converting Boolean to Strings</h3>
+	<p>The global method String() can convert booleans to strings</p>
+
+	<script>
+		String(false) // returns "false"
+		String(true)  // Returns "true"
+
+		// the boolean method toString() does the same thing.
+		false.toString() // returns "false"
+		true.toString()  // returns "true"
+	</script>
+
+	<h3>converting Dates to Strings</h3>
+	<p>The global method String() can convert dates to strings.</p>
+	<script>
+		String(Date()) // Returns the date in string formate. 
+		// toString() does the same thing
+		Date().toString() // returns that date in string formate. 
+	</script>
+
+	<p>In the chapter Date Methods, you will find more methods that can be used to convert dates to to strings</p>
+
+	<h3>Converting Strings to Numbers</h3>
+	<p>The global methods Numbers() can convert strings to numbers. String containing numbers (like "3.14") convert to numbers ( like 3.14) Empty strings convert to 0. Anything else converts to NaN (Not a number)</p>
+
+	<script>
+		Number("3.14") // returns 3.14
+		Number(" ")    // returns 0
+		Number("")	   // returns 0
+		Number("99 88")// returns NaN
+	</script>
+	<p>In the chapter Number Methods, you will find more methods that can be used to convert strings to numbers:</p>
+
+	<script>
+		// Method 		Description
+		parseFloat() 	// Parse a string returns a floating point number
+		parseInt() 		// Parse a string and returns an int
+	</script>
+
+	<h3>converting Booleans to Numbers</h3>
+	<p>The global method Number() can also convert booleans to numbers.</p>
+	<script>
+		Number(false) // returns 0
+		Number(true)  // returns 1
+	</script>
+
+	<h3>converting Dates to Numbers</h3>
+	<p>the global method Number() can be used to convert dates to numbers.</p>
+	<script>
+		d = new Date();
+		Number(d)
+		// the date method getTime() does the same.
+		d = new Date();
+		d.getTime()
+	</script>
+
+	<h3>Automatic type conversion</h3>
+	<p>When JavaScript tries to operate on a "Wrong" data type, it will try to convert the value to a "right" type. The result is not always what you expect:</p>
+	<script>
+		5 + null   // returns 5 because null is converted to 0
+		"5" + null // returns "null" because null is converted to "null"
+		"5" + 1    // returns "51" because 1 is converted to "1"
+		"5" - 1    // returns 4 because "5" is converted to 5. 
+	</script>
+
+
+</body>
+</html>

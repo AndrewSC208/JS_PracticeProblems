@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>JavaScript Strings</title>
+        
+        <link rel="author" href="humans.txt">
+    </head>
+    <body>
+
+        <p id="p1">Lets look for something inside of this string and find out were it is?</p>
+        <button onclick="indexOfFunction()">Try it!</button>
+        <p id="demo"></p>
+        
+        <script>
+        // these are my notes on strings:
+        // String methods 
+        // charAt(): 	returns the characat a specified index
+        var firstName = "Andrew";
+        var lastName =	"Meiling";
+        console.log(firstName.charAt(4));
+
+        // charCodeAt(): Returns the unicode of the character at the specified index.
+        console.log(lastName.charCodeAt(3)); 
+
+        // concat(): Joins two or more string, and returns a copy of the joined strings
+        var str1 = "Hello ";
+        var str2 = "World!";
+        var concatString = str1.concat(str2);
+        console.log(concatString);        
+
+        // THIS IS A LIST OF STRING METHODS:
+
+        // fromCharCode(): Converts unicode to characters
+        // indexOf(): Returns the position of the first found occurance of a specified value in a string
+        function indexOfFunction() {
+            var str = document.getElementById("p1").innderHTML;
+        }
+        // lastIndexof(): Returns the position of the last found occurance of a specified value in a string.
+        // localCompare(): compars two strings in the current locale
+        // match(): searches a string for match against a reqular expression and returns the matches.
+        // replace(): Searches a string for a value and returns a new string with the value replaced
+        // search(): searches a string for a value and returns the position of the value
+        // slice(): extracts part of a string and returns a new string 
+        // split(): splits a string into an array of substrings
+        // substr(): Extacts  part of a string from a starting position through a number of characters.
+        // substring(): Exatracts part of a string from two specified points.
+        // toLocaleLowerCase(): Converts a string to lowercase letters, according to the host's locale
+        // toLocaleUpperCase(): Converts a string to uppercase letters, according to the host's locale
+        // toLowerCase(): converts a string to lowercase letters
+        // toString(): Returns the value of a string object
+        // toUpperCase(): Converts a string to uppercase letters
+        // trim(): Removes whitespace from both ends of a string
+        // valueOf(): Returns the primitive value of a string object 
+
+        //STRING METHODS:
+
+        </script>
+    </body>
+</html>

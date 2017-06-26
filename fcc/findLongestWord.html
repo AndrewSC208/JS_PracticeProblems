@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Find the longest Word</title>
+</head>
+<body>
+	<!-- find the longest word in a sentance and return the length of that word. -->
+<p>Enter a sentacne to find the longest word:</p>
+<input type="text" id="word">
+<button onclick="main()">Click me!</button>
+
+<div id="output"></div>
+
+<script>
+	function main() {
+	var str = document.getElementById("word").value;
+
+function findLongestWord(str) {
+	var r = "",
+		x = 0,
+		y = 0;
+	// split sentance into an array of each word in the sentance.
+	r = str.split(' ');
+	// iterate over each 
+	for(var i = 0; i < r.length; i++) {
+		x = r[i].length;
+		if(x > y) {
+			y = x;
+		}
+	}
+	return y;
+	//console.log(y);
+}
+
+	// call the function with var stre
+	findLongestWord(str);
+	}
+</script>
+
+</body>
+</html>

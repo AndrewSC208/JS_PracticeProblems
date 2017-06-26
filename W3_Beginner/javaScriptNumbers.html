@@ -1,0 +1,93 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>javaScript Numbers</title>
+	<link rel="stylesheet" href="styles/numStyles.css">
+</head>
+<body>
+
+	<h1>JavaScript Numbers</h1>
+
+	<p>JavaScript Numbers can be written with decimals or without decimals</p>
+
+	<script>
+		var x = 34;
+		var y = 34.5555;
+
+		// extra large or extra small numbers can be written in exponetial form
+
+		var xy = 34254e5;
+		var we = 3452534e-4;
+
+		// JS numbers are always stored as 64 bit floating point numbers. 
+	</script>
+	<h3>JavaScript Numbers are always 64-bit floating point</h3>
+	<p>Unlike many other programming languages, JavaScirpt, does not define different types of numbers, like, integers, short, long, floating-point.</p>
+
+	<p>JavaScript numbers are always stored as double precision floating point numbers, following the international IEEE 754 standard</p>
+	<p>This for</p>
+
+	<p>Integers (numbers without a period or exponent notation) are considered accurate up to 15 digits</p>
+
+	<script>
+		var x = 9999999999999999  // will be 999999999999999
+		var y = 99999999999999999 // will be 1000000000000000
+
+		// max number of decimals is 17. 
+
+		// floating point is always accurate.
+
+	</script>
+
+
+	<h3>Fun with the toString() method:</h3>
+	
+	<script>
+		var myNum = 128;
+		console.log(myNum.toString(16)); // output: 80
+		console.log(myNum.toString(8));	 // output: 200
+		console.log(myNum.toString(2));  // output: 1000000
+	</script>
+	
+	<h3>Numbers can be objects:</h3>
+	<p>Normally JavaScript Numbers are primitive</p>
+
+	<script>
+		// NaN stands for not a number. 
+		// example
+		var x = 100 / "apple" // out is NaN
+	</script>
+
+	<h3>Numbers can be objects</h3>
+	<p>Normally JavaScript numbers are primitive values created from literals: var = 123;</p>
+	<p>But numbers can also be defined as objects with the keyword new: var y = new Number(123);</p>
+
+	<script>
+		// example:
+		var x = 123;
+		var y = new Number(123);
+
+		console.log(typeof(x)); // returns number
+		console.log(typeof(y)); // returns object
+		// don't make number objects, they slow down execution speed, and produce nasty side effects:
+
+	</script>
+
+	<h3>Number properties and methods</h3>
+
+	<p>Primitive values(like 3.14 or 2014), cannot have properties and methods (because they are not objects)</p>
+	<p>But with javaScirpt, methods and properties are also available to primitive values, because javaScript treats primitive values as object when executing methods and properties.</p>
+
+	<h4>Number Properties</h4>
+
+	<table>
+		<tr><th>Property</th><th>Description</th></tr>
+		<tr><td>MAX_VALUE<td>Returns the larges number possible in JavaScript</td></td></tr>
+		<tr><td>MIN_VALUE</td><td>Returns the smallest number possible in JavaScript</td></tr>
+		<tr><td>NEGATIVE_INFINITY</td><td>Represents a "Not-a-Number" value</td></tr>
+		<tr><td>POSITIVE_INFINITY</td><td>Represents infinity (returned on overflow)</td></tr>
+	</table>
+
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Return the largest!</title>
+</head>
+<body>
+<!-- Return the largest array! -->
+
+<p>Follow direction's:</p>
+<input type="text" id="word">
+
+<button onclick="main()">Click me!</button>
+
+<div id="output"></div>
+
+<script>
+// glabal vars:
+
+
+// following OOP standards:
+function main() {
+	
+
+function end(str, target) {
+	str = str.substr(str.length-target.length, target.length);
+	console.log(str);
+
+	if(str == target){
+		//console.log("t");
+		return true;
+	} else {
+		//console.log("f");
+		return false;
+	}
+	
+}
+
+	end("He has to give me a new name", "name");
+
+}
+
+
+
+
+</script>
+
+</body>
+</html>

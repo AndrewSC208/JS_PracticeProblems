@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>javaScript Notes </title>
+	</head>
+	<body>
+		<!-- lets go over JS all over again. -->
+		<h1>These are some headers so I can play around with them on js</h1>
+		<p>This is just some reandom text so that I can js it </p>
+
+		<p id="demo">This is a demonstration.</p>
+		<button type = "button" onclick="myFunction()">Click Me! To change the p tag above me!</button>
+
+
+
+		<p id="demo2">This is another demonstration.</p>
+		<button type="button" onclick="myFunction2()">Click Me! To change the p tag css above me!</button>
+
+
+		<p>These are two very simple examples of js </p>
+
+		<hr/>
+
+		<h3>lets get a little more complicated </h3>
+		<h4>Validate some info</h4>
+		<p> Please input a number between 1 and 10:</p>
+		<input id="numb" type="text">
+		<button type="button" onclick="myFunction3()">Submit</button>
+		<p id="demo3"></p>
+		<!-- this is where an valid or invalid text will output -->
+
+		<!-- This is a super simple function and call -->
+		<script>
+			function myFunction() {
+				document.getElementById("demo").innerHTML = "Hello JavaScript!";
+			}
+
+			function myFunction2() {
+				// first select the element:
+				var x = document.getElementById("demo2");
+				x.style.fontSize = "25px";
+				x.style.color = "red";
+			}
+
+			function myFunction3() {
+				// make some variables
+				var x, text;
+				// get the value of the input field with the id="numb"
+				x = document.getElementById("numb").value;
+				// If x is Not a Number or less than one or greater than 10.
+				if(isNaN(x) || x < 1 || x > 10) {
+					text = "Input not valid";
+				} else {
+					text = "Input OK";
+				}
+				document.getElementById("demo3").innerHTML = text;
+			}
+		</script>
+
+
+		<hr/>
+		<h2>Manipulating HTML Elements: </h2>
+		<p>The best way to manipulate and HTML element is by using the document.getElementById(id) method. I would much rather use a jQuery for selecting items but right now I am just making this for js. </p>
+
+		<p id="demo4">My First Paragraph</p>
+
+		<script>
+			document.getElementById("demo4").innerHTML = "Paragraph changed to this with some JS and the getElementById() function.";
+
+			// this is just a way to output the date
+			document.write(Date());
+
+		</script>
+
+		<h2>This is the document.write() function<h2>
+		<p id="newDate">This is going to change</p>
+		<button onclick="myFunction5()">Click Me!</button>
+		<script>
+
+			function myFunction5() {
+				document.getElementById("newDate").innerHTML = Date();
+			}
+		</script>
+
+		<script>
+
+			// lets make some arrays, object literals
+			var randNumber = [23, 23, 54, 6345];
+			console.log(randNumber);
+			var personObject = {fistname:"Andrew", lastName:"Meiling"};
+			console.log(personObject);
+
+			// this is going to be a simple multiplication function()
+			function myMultiplicationFunc(a, b) {
+				var c = a * b; // returns the product of the two.
+				console.log(c);
+			}
+			// don't forget to call that cool little function that you just make.
+			myMultiplicationFunc(1, 10);
+			myMultiplicationFunc(2, 1110);
+			myMultiplicationFunc(4564, 10);
+
+		</script>
+
+
+
+	</body>
+</html>

@@ -1,0 +1,262 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Java Script Arrays</title>
+</head>
+<body>
+	<h1>JavaScript Arrays and what they are used for</h1>
+	<p>JavaScript arrays are used to store multiple values in a single variable.</p>
+	<h3>Displaying Arrays </h3>
+	<p>This will show you a way of displaying arrays</p>
+
+	<p id="demo"></p>
+	
+	<script>
+		var cars = ["Saab", "Volvo", "BMW"];
+		document.getElementById("demo").innerHTML = cars;
+		// this is super easy
+	</script>
+
+	<h3>What is an array?</h3>
+	<p>An array is a special variable, which can hold more than one value at a time.</p>
+	<p>If you have a list of items (a lit of car names, for example), storing the cars in a single variables could look like this:</p>
+
+	<!-- example -->
+	<script>
+		var car1 = "Saab";
+		var car2 = "Volvo";
+		var car3 = "BMW";
+
+		// this is a really in efficient way to store as many values as this. That is why we are using an array. We are storing a bunch of like things. 
+	</script>
+	
+	<h3>Creating an array</h3>
+
+	<p>Using an array literal is the easiest way to create a JavaScript Array</p>
+	<p>Syntax:</p>
+
+	<script>
+		var cars = ['Saab', 'Volvo', 'BMW'];
+		console.log(cars);
+	</script>
+
+	<p>You can also using the javascript new keyword</p>
+	<script>
+		var cars2 = new Array('Saab', 'Volvo', 'BMW');
+		console.log(cars2);
+	</script>
+
+	<h3>Lets access all of the elements now in the array!</h3>
+	<p>You refer to an array element by referring to the index number. Just like in Java This statement access the value of the first element in myCars</p>
+
+	<script>
+		var carNumberOne = cars[0];
+		console.log("This is the first item in the array" + carNumberOne);
+
+		//	now lets change the first array element:
+
+		cars[0] = "Avenger";
+
+		console.log(cars[0]);
+
+	</script>
+
+	<h3>How can you have different objects in one array</h3>
+	<p>We are going to turn it up a little. lets put some objects inside one array and then call them.</p>
+
+	<p>JavaScript variables car be object. Arrays are special kinds of objects. Because of this, you can have variables of different types in the same Array. You can have objects in an Array. You can have function in an Array. You can have arrays in an array:</p>
+
+	<p>
+		myArray[0] = Date.now;
+		myArray[1] = myfunction;
+		myArray[2] = myCars;
+	</p>
+
+	<h3>Arrays are Objects</h3>
+
+	<p>Arrays are a special type of object. The typeof operator in JavaScript returns "object" for arrays. But, JavaScript arrays are best described as arrays. Arrays use numbers to access its "elements". In this example, person[0] returns Andrew.</p>
+	<!-- Example -->
+	<script>
+
+		//	Lets make an arrays:
+		var person = ["Andrew", "Brittany", "Someone"];
+		console.log(person[0]);
+
+		// lets make an object:
+		var person = {firstName:"Andrew", lastName:"Meiling", age:27};
+		console.log(person.firstName);
+
+	</script>
+
+	<h3>Array Properties and Methods</h3>
+
+	<p>The real strength of JavaScript arrays are the built-in array properties and methods:</p>
+	<!-- Example -->
+	<script>
+		// make an array:
+		var fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+		console.log(fruits.length); // this will print out 4 to the console. 
+		// adding elements to the array
+		fruits[fruits.length] = "Lemon"; // adds new element (lemon) to fruits
+		console.log(fruits.length);
+		console.log(fruits);
+	</script>
+
+	<h3>Looping Array elements</h3>
+
+	<p>The best way to loop through an array is using a standard for loop:</p>
+	<p>click on the button to show the loop:</p>
+	<button onclick="myFunction()">Try It</button>
+	<p id="demo2"></p>
+	<script>
+		function myFunction() {
+			var index;
+			var text = "<ul>";
+			var fruits = ["Banana", "Orange", "Apple", "mango"];
+			for(index = 0; index < fruits.length; index++) {
+				text += "<li>" + fruits[index] + "</li>";
+			}
+			text += "</ul>";
+			document.getElementById("demo2").innerHTML = text;
+		}
+	</script>
+
+	<h3>When to use Arrays? When to use Object?</h3>
+	<ul>
+		<li>JavaScript does not support associative arrays</li>
+		<li>YOu should use objects when you want the element names to be strings. </li>
+		<li>You should use arrays when you want the element name to be sequential numbers</li>
+	</ul>
+
+	<h1>JavaScript Array Methods</h1>
+
+	<p>The strength of JavaScript arrays lies in the array methods.</p>
+
+	<h3>converting Arrays to Strings</h3>
+
+	<p>In JavaScript, all objects have the valueOf() and toString() methods. The valueOf() method is the default behavior for an array. I t returns an array as a string:</p>
+
+	<!-- Example -->
+	<p>The valueOf() method returns an array as a comma separated string</p>
+	<p id="demo3"></p>
+	<p id="demo4"></p>
+	<p id="demo5"></p>
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango", "peaches"];
+		document.getElementById("demo3").innerHTML = fruits.valueOf();
+		// in JavaScirpt valueOf() and toString() are equal.
+		document.getElementById("demo4").innerHTML = fruits.toString();
+		// the join method also joins all array element into a string. It behaves just like toString(), but you can specify the separator:
+		document.getElementById("demo5").innerHTML = fruits.join(" * ");
+
+		// more methods:
+
+		// pop() 	 Removes the last element from the array.
+		// push()    Adds a new element ("kiwi") to the end of fruits.
+		// shift()   Removes the first element "Banana" from fruits
+		// unshift() The unshift method adds new elements to the beginning of an array. Not that the unshift method does not work properly in IE 8 and earlier.
+	</script>
+
+	<h3>Changing Elements</h3>
+	<p>Array elements are accessed using their index number:</p>
+
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		fruits[0] = "Kiwi" // the the first element of fruits to "Kiwi"
+		fruits[fruits.length] = "Kiwi"; // appends "kiwi" to fruit
+		delete fruits[0]; // changes the first element in fruits to undefined
+		fruits.splice(2,0, "Lemon", "Kiwi"); // this inserts lemon and kiwi after orange in the third spot. 
+		// splicing an Array:
+			// The first parameter (2) defines the position where new elements should be added (spliced in)
+			// the second parameter (0) defines how many elements should be removed.
+			// The rest of the parameters ("Lemon", "Kiwi") define the new elements to be added. 
+
+		// Using splice() to Remove Elements:
+		// with clever parameter setting, you can use splice() to remove elements without leaving "holes" in the array:
+		frutis.splice(0,1); // removes the first element of fruits.
+		// The first parameter (0) defines the position where new elements should be added (splice in)
+		// The second parameter (1) defines how many elements should be removed
+		// The rest of the parameters are omitted. No new elements will be added.  
+	</script> 
+
+	<h3>sorting an array</h3>
+	<p>The sort() method sorts an array alphabetically:</p>
+	<script>
+		var fruits = ["Banana", "orange", "Apple", "Mango"];
+		fruits.sort(); // sorts the elements of fruits.
+	</script>
+
+	<h3>Reversing an Array</h3>
+	<p>The reverse() method reverses the elements in an array</p>
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		fruits.sort(); // sorts the elements of fruits
+		fruits.reverse(); // reverses the order of the elements
+	</script>
+
+	<h3>Numeric Sort</h3>
+	<p>The sort() methods cannot be used on a number array, because it sorts alphabetically (25 is bigger than 100). You can fix this by providing a function that returns -1, 0, or 1:</p>
+	<script>
+		var points = [40, 100, 1, 5, 25, 10];
+		points.sort(function(a,b){
+			return b-a}
+		);
+		// Calling function(a, b) returns -1, 0, or 1, depending on the values of a and b. The arguments are provided by the sort() method when it compares two values. Example: when comparing 40 to 100, the sort() method calls function(40, 100).
+	</script>
+
+	<h3>Find the Highest (or lowest) Value</h3>
+	<p>How to find the highest value in an array</p>
+	<script>
+		var points = [40, 100, 1, 5, 25, 10];
+		points.sort(function(a, b){
+			return b-a
+		}); // now point[0] contains the highest value
+
+		// now lets do the lowest:
+		points.sort(function(a, b){
+			return a-b
+		}); // and now points[0] contains the lowest value.
+	</script>
+
+	<h3>Let's go ahead and Join some arrays</h3>
+	<p>The concat() method creates a new array by concatenating two arrays:</p>
+	<script>
+		var myGirls    = ["Cecilie", "Lone"];
+		var myBoys     = ["Emil", "Tobias", "Linus"];
+		var myChildren = myGirls.concat(myBoys); // concatenates (joins) myGirls and myBoys
+
+		// the concat() method can take any number of array arguments
+	</script>
+
+	<h3>Slicing an array</h3>
+	<p>the slice() method slices out a piece of an array</p>
+	<script>
+		var fruits = ["Banana", "Oragne", "Lemon", "Apple", "Mango"];
+		var citrus = fruits.slice(1,3); // slicen it up. from 1 to 3
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

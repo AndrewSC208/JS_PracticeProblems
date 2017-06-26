@@ -1,0 +1,51 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JS Variables</title>
+</head>
+<body>
+	<!-- JS notes on JS Variables and Scope  -->
+
+	<script>
+		// this is an example of local variable scope.
+		// code here can not use carName
+		function myFunction() {
+			var carName = "BMW";
+			// code here can use carName
+			// BMW is inside of the function and can not be used outside of the function
+		}
+	</script>
+
+	<script>
+		// this an example of GLOBAL js variables
+		var carName = "BMW";
+
+		// code here can use carName
+
+		function myFunction() {
+			// code here can also use carName
+		}
+	</script>
+
+	<!-- Automatically Global -->
+	<!-- If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable -->
+	<!-- This code example will declare carName as a global variable, even if it is executed inside a function. -->
+	<script>
+	// code here can use carName
+	function myFunction() {
+		carName = "Volvo";
+
+		// code here can use carName;
+	}
+	</script>
+
+	<script>
+		// this is a global variable in HTML
+		// code here can use window.carName
+		function myFunction() {
+			carName = "Volvo";
+		}
+
+	</script>
+</body>
+</html>

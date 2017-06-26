@@ -1,0 +1,176 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript String Methods</title>
+	<link rel="stylesheet" href="styles/stringMethodStyles.css">
+</head>
+<body>
+	<h1>JavaScript String Methods</h1>
+	<h3>Finding a string inside a string</h3>
+	<!-- These are my notes of javascript strings methods -->
+
+	<p id="p1">Please locate where 'locate' occurs!</p>
+
+	<button onclick="findFirstLocate()">Click Me! To find the first 'locate'</button>
+	<button onclick="findLastLocate()">Click Me! To find the last 'locate'</button>
+	<button onclick="findLocate()">Click Me! To were 'locate'</button>
+
+	<div id="demo"></div>
+	
+	<script>
+	function findFirstLocate() {
+		var str = document.getElementById("p1").innerHTML;
+		var pos = str.indexOf("locate");
+		document.getElementById("demo").innerHTML = pos;
+		document.getElementById("demo").style.backgroundColor = 'green';
+	}
+
+	function findLastLocate() {
+		var str = document.getElementById("p1").innerHTML;
+		var pos = str.lastIndexOf("locate");
+		document.getElementById("demo").innerHTML = pos;
+		document.getElementById("demo").style.backgroundColor = "blue";
+	}
+	function findLocate() {
+		var str = document.getElementById("p1").innerHTML;
+		var pos = str.search("locate");
+		document.getElementById("demo").innerHTML = pos;
+		document.getElementById("demo").style.backgroundColor = "yellow";
+	}
+	</script>
+
+	<h3> Extracting string parts</h3>
+	<p>There are 3 methods for extracting a part of a string:</p>
+	<ul>
+		<li>slice(start, end)</li>
+		<li>substring(start, end)</li>
+		<li>substr(start, length)</li>
+	</ul>
+
+	<h4>Slice(start, end)</h4>
+	<p>The slice() method extract a part of a string and returns the extracted parts in a new string</p>
+
+	<button onclick="stringSlice()">Click Me! To slice the string and output below!</button>
+
+	<div id="demo2"></div>
+
+	<script>
+		function stringSlice() {
+			var str = "Apple, Banana, Kiwi";
+			document.getElementById("demo2").innerHTML = str.slice(7,13)
+		}
+
+		// If the parameter is negative, the position is counted from the end of the string.
+		// example: var str = str.slice(-12, -6);
+
+		// substring() is similar to slice(). The difference is that substring() cannot accept negative indexes. 
+	</script>
+
+	<h4>substr()</h4>
+
+	<p>substr() is similar to slice(). The difference is that the second parameter specifies the length of the extracted part.</p>
+
+	<button onclick="useSubStr()">Click Me! to use the substr() method!</button>
+
+	<div id="demo3"></div>
+
+	<script>
+		function useSubStr(){
+			var str = "Apple, Banana, Kiwi";
+			document.getElementById("demo3").innerHTML = str.substr(7,6);
+		}
+	</script>
+
+	<h4>Replacing String Content</h4>
+	<p>The replace() method replaces a specified value with another value in a string:</p>
+
+	<p>replace "Microsoft" with "w3schools" in the paragraph below:</p>
+
+	<button onclick="replaceStrings()">Click Me! To change Microsoft!</button>
+
+	<div id="demo4">Please Visit Microsoft!</div>
+
+	<script>
+		function replaceStrings(){
+			var str = document.getElementById("demo4").innerHTML;
+			var txt = str.replace("Microsoft", "w3schools");
+			document.getElementById("demo4").innerHTML = txt;
+			document.getElementById("demo4").style.backgroundColor = 'green';
+			document.getElementById("demo4").style.padding = '10';
+			document.getElementById("demo4").style.margin = '10';
+			document.getElementById("demo4").style.width = '500';
+			document.getElementById("demo4").style.textAlign = 'center';
+		}
+	</script>
+
+	<h4>Converting to Upper and Lower Case</h4>
+
+	<p id="change">This is some dummy text that we are going to change withe the toUpperCase() and toLowerCase() methods! have fun!!!!!</p>
+
+	<button onclick="changeToUpper()">Click Me! To change the above paragraph to upper case.</button>
+
+	<button onclick="changeToLower()">Click Me! to change the above paragraph to lower case.</button>
+
+	<script>
+		function changeToUpper() {
+			var text = document.getElementById("change").innerHTML;
+			document.getElementById("change").innerHTML = text.toUpperCase();
+			document.getElementById("change").style.backgroundColor = 'green';
+		}
+
+		function changeToLower() {
+			var text = document.getElementById("change").innerHTML;
+			document.getElementById("change").innerHTML = text.toLowerCase();
+			document.getElementById("change").style.backgroundColor = 'yellow';
+		}
+	</script>
+	
+	<h4>The concat() Methods</h4>
+
+	<p>concat() joins two or more strings:</p>
+
+	<script>
+		var text1 = "Hello";
+		var text2 = "World!";
+		var text3 = text1.concat(" ", text2);
+		// Print out text3 to the console.
+		console.log(text3);
+	</script>
+
+	<h3>Extracting string characters</h3>
+	<p>there are 2 safe methods for extracting string characters:</p>
+	<ul>
+		<li>charAt(position)</li>
+		<li>charCodeAt(position)</li>
+	</ul>
+	<h4>The charAt() method</h4>
+	<p>The charAt() method returns the character at a specified index (position) in a string:</p>
+	<script>
+		var str = "HELLO WORLD";
+		var strChar = str.charAt(0);
+		console.log(strChar); // this will output H
+	</script>
+
+	<h4>The charCodeAt() Method</h4>
+	<p>The charCodeAt() method returns the unicode of the character at a specified index in a string:</p>
+	<script>
+		var str = "HELLO WORLD";
+		str.charCodeAt(0); // this returns 72
+		// NOTE: doing this is unsafe and unpredictable:
+			// it does not work in all browsers
+			// it make strings look like arrays (but they are not)
+			// str[0] = "H" does not give an error (but does not work)
+	</script>
+
+	<h3>Converting a string to an array</h3>
+	<p>A string can converted to an array with the split() methods:</p>
+	<script>
+		var text = "a,b,c,d,e";
+		text.split(",");
+		text.split(" ");
+		text.split("|");
+	</script>
+
+	<!-- For a complete string reference go to: http://www.w3schools.com/jsref/jsref_obj_string.asp  -->
+</body>
+</html>

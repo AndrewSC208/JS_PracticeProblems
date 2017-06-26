@@ -1,0 +1,55 @@
+<document html>
+<html>
+	<head>
+		<title>JavaScript Events</title>
+		<link rel="stylesheet" href="styles/eventStyles.css">
+	</head>
+	<body>
+		<!-- JavaScript Events  -->
+		<script>
+			// HTML allows event handler attributes, with JavaScript code, to be added to HTML elements.
+			// syntax:
+			// <some-HTML-element some-event='some JavaScirpt'>
+			// <some-HTML-element some-event="some JavaScirpt">
+			// THESE ARE THE COMMON HTML EVENETS:
+				// onchange: 	An HTML element has been changed 
+				// onclick: 	The user clicks on HTML element
+				// onmouseover: The user moves the mouse over an HTML element
+				// onmouseout: 	The user mover the mouse away from an HTML element
+				// onkeydown:  	The user pushes a keyboard key
+				// onload: 		The browser has finished loading the page.
+
+			// this is were you can find the whole list of events:
+			// http://www.w3schools.com/jsref/dom_obj_event.asp
+
+		</script>
+		<!-- example -->
+		<button onclick="displayDate()">The time is ?</button>
+		<p id="demo" onmouseover="changeColor()"></p>
+
+		<div onmouseover="displayDate2()" class="greenBox">
+			<p>hover over me and I will display the date below!</p>		
+		</div>
+
+		<div id="demo2"></div>
+
+		<script>
+			function displayDate() {
+				document.getElementById("demo").innerHTML = Date();
+			}
+
+			function displayDate2() {
+				document.getElementById("demo2").innerHTML = Date();
+
+			}
+
+			function changeColor() {
+				document.getElementById("demo2").style.color = "green";
+				document.getElementById("demo2").style.height = '200px';
+				document.getElementById("demo2").style.width = '200px';
+			}
+
+		</script>
+		
+	</body>
+</html>
